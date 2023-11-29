@@ -1,0 +1,171 @@
+version: '3.8'
+
+services:
+    # dev-db:     It works too
+    #   image: postgres:13
+    #   ports:
+    #     - 5434:5432
+    #   expose:
+    #     - 5434
+    #   environment:
+    #     - POSTGRES_USER=postgres
+    #     - POSTGRES_PASSWORD=123
+    #     - POSTGRES_DB=nest
+    #   networks:
+    #     - transcendence 
+    db:
+      container_name: database
+      image: postgres
+      restart: always
+      ports:
+        - '5432:5432'
+      env_file: .env
+      volumes:
+        - db_volume:/var/lib/postgresql/data
+      networks:
+        - transcendence
+    backend:
+      container_name: backend
+      env_file: .env
+      build:
+        context: ./srcs/Back
+        dockerfile: Dockerfile
+      ports:
+        - "4000:4000"
+        - "5555:5555"
+      depends_on:
+        - db
+      volumes:
+        - ./srcs/Back/project:/usr/src/app
+        - /usr/src/app/api/node_modules
+      networks:
+        - transcendence
+    frontend:
+       container_name: frontend
+       env_file: .env
+       build:
+         context: ./srcs/Front
+         dockerfile: Dockerfile
+       ports:
+         - "8000:8000"
+       depends_on:
+         - db
+       volumes:
+         - ./srcs/Front/site/my-app:/usr/src/app
+         - /usr/src/app/node_modules
+       networks:
+         - transcendence
+
+networks:
+  transcendence:
+    name: transcendence
+    driver: bridge
+
+volumes:
+  db_volume:
+    name: 'db_volume'
+# #   back_volume:
+# #     name: back_volume
+# #     driver: local
+# #     driver_opts:
+# #       type: 'none'
+# #       o: 'bind'
+# #       device: '/home/yahui/Downloads/yangchi_test'
+# #   front_volume:
+# #     name: back_volume
+# #     driver: local
+# #     driver_opts:
+# #       type: 'none'
+# #       o: 'bind'
+# #       device: '/home/yahui/Downloads/yangchi_test'
+
+  
+# # networks:
+# #     trancendence:
+# #       name: transcendence
+# #           driver: bridge
+
+
+# version: '3.8'
+
+# services:
+#     # dev-db:     It works too
+#     #   image: postgres:13
+#     #   ports:
+#     #     - 5434:5432
+#     #   expose:
+#     #     - 5434
+#     #   environment:
+#     #     - POSTGRES_USER=postgres
+#     #     - POSTGRES_PASSWORD=123
+#     #     - POSTGRES_DB=nest
+#     #   networks:
+#     #     - transcendence 
+#     db:
+#       container_name: database
+#       image: postgres
+#       restart: always
+#       environment:
+#         - POSTGRES_USER=postgres
+#         - POSTGRES_PASSWORD=123
+#         - POSTGRES_DB=nest
+#       ports:
+#         - '5432:5432'
+#       volumes:
+#         - db_volume:/var/lib/postgresql/data
+#       networks:
+#         - transcendence
+#     backend:
+#       container_name: backend
+#       env_file: .env
+#       tty: true
+#       build:
+#         context: ./srcs/Back
+#         dockerfile: Dockerfile
+#       ports:
+#         - "4000:4000"
+#         - "5555:5555"
+#       depends_on:
+#         - db
+#       volumes:
+#         - ./srcs/Back/project:/usr/src/app
+#       networks:
+#         - transcendence
+#     frontend:
+#        container_name: frontend
+#        env_file: .env
+#        tty: true 
+#        build:
+#          context: ./srcs/Front
+#          dockerfile: Dockerfile
+#        ports:
+#          - "8000:8000"
+#        depends_on:
+#          - db
+#        volumes:
+#          - ./srcs/Front/site:/usr/src/app
+#        networks:
+#          - transcendence
+
+# networks:
+#   transcendence:
+#     name: transcendence
+#     driver: bridge
+
+# volumes:
+#   db_volume:
+#     name: 'db_volume'
+#   back_volume:
+#     name: back_volume
+#     driver: local
+#     driver_opts:
+#       type: 'none'
+#       o: 'bind'
+#       device: '/home/yahui/Downloads/yangchi_test'
+#   front_volume:
+#     name: back_volume
+#     driver: local
+#     driver_opts:
+#       type: 'none'
+#       o: 'bind'
+#       device: '/home/yahui/Downloads/yangchi_test'

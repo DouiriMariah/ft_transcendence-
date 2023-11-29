@@ -1,0 +1,148 @@
+.user-search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.search-container {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 500px;
+}
+
+.search-input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: beige;
+}
+
+.user-list-container {
+  width: 500px;
+  display: flex;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.user-list {
+  position: fixed;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+  overflow-y: auto;
+  max-height: 420px;
+  scrollbar-color: gray darkgray;
+  background-color: transparent;
+}
+
+.user-list::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.user-list::-webkit-scrollbar-thumb {
+  background-color: darkgray;
+  border-radius: 6px;
+}
+
+.user-list::-webkit-scrollbar-thumb:hover,
+.user-list::-webkit-scrollbar-thumb:active {
+  background-color: darkgray;
+}
+
+.user-list::-webkit-scrollbar-track {
+  background-color: gray;
+}
+
+.user-list::-webkit-scrollbar-button {
+  display: none;
+}
+
+.friend {
+  height: 20px;
+  color: wheat;
+  position: absolute;
+}
+
+.user-list p {
+  max-width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  background-color: wheat;
+}
+
+.item .avatar-container {
+  background-color: inherit;
+  position: relative;
+  float: left;
+}
+
+.item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.text {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  flex-grow: 1;
+  font-size: 20px !important;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background-color: wheat;
+}
+
+.text p {
+  float: left;
+  background-color: wheat;
+  color: black;
+  cursor: pointer;
+
+}
+
+.button {
+  background-color: #3a6ca9;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+}

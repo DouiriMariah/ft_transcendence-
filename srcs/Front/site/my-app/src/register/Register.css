@@ -1,0 +1,121 @@
+.user-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+  margin: 10px;
+  background-color: aliceblue;
+  color: black;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+  background-color: rgb(239, 233, 222);
+}
+
+.avatar-preview {
+  width: 150px;
+  height: 150px;
+  margin-top: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.form {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  height: 600px;
+  color: aliceblue;
+  flex-direction: column;
+}
+
+.sliding-button {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.sliding-button input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #2196f3;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+.form button {
+  color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 32px;
+  text-align: center;
+  display: flex;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: rgb(233, 94, 94);
+}
+
+.qrcode {
+  width: 300px;
+  height: 300px;
+  border: 5px black;
+  z-index: 1000000;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  background-size: cover;
+  background-position: center;
+}
+
+.error-message {
+  color: rgb(174, 21, 21);
+  font-weight: bold;
+  font-size: 10px;
+  align-items: center;
+  background-color: aliceblue;
+}

@@ -1,0 +1,148 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               Int            @id @default(autoincrement())
+  createAt         DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  email            String         @unique
+  refreshtoken     String?
+  password_A2f     String?
+  login            String?
+  nickname         String?        @unique
+  avatar           String?
+  status           String?        
+
+  blocklist        BlockedUsers[] @relation("BlockedToUsers")
+  blacklist        BlockedUsers[] @relation("UserToBlocked")
+  friendships      Friends[]      @relation("FriendsUsers")
+  friends          Friends[]      @relation("UserFriends")
+  statistic        GameInstance?  @relation("UserGameInstance")
+  
+  my_invits        Invitation[]   @relation("I_send")
+  invits_received  Invitation[]   @relation("I receive")
+  session_list     Session[]      @relation("UserSessions")
+
+  @@map("users")
+}
+
+model GameInstance {
+  id             Int             @id @default(autoincrement())
+  win            Int
+  losses         Int
+  rank           Int
+  level          Int
+  achievement    String
+  user_nickname  String          @unique
+  user           User            @relation("UserGameInstance", fields: [user_nickname], references: [nickname])
+  player_history Match_History[]
+}
+
+model Match_History {
+  id                Int          @id @default(autoincrement())
+  my_score          Int
+  opponent_score    Int
+  opponent_nickname String
+  win               Boolean
+  player_nickname   String
+  player            GameInstance @relation(fields: [player_nickname], references: [user_nickname])
+}
+
+model Friends {
+  id       Int    @id @default(autoincrement())
+  userId   String
+  friendId String
+  user     User   @relation("FriendsUsers", fields: [friendId], references: [nickname])
+  friend   User   @relation("UserFriends", fields: [userId], references: [nickname])
+
+  @@unique([userId, friendId])
+}
+
+model BlockedUsers {
+  id        Int    @id @default(autoincrement())
+  userId    String
+  blockerId String
+  user      User   @relation("BlockedToUsers", fields: [blockerId], references: [nickname])
+  blocked   User   @relation("UserToBlocked", fields: [userId], references: [nickname])
+
+  @@unique([userId, blockerId])
+}
+
+model Session {
+  id        Int    @id @default(autoincrement())
+  userId    String
+  sessionId String   @unique
+  username  String    @unique
+  connected String?
+  for       String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+ 
+
+  chats            Chat[]   @relation("joined")
+  lobbyAdmin         Chat[]   @relation("admin")
+  bannedFrom         Chat[]   @relation("banned")
+  muteFrom           Chat[]   @relation("muted")
+  messages           Message[] @relation("author")
+
+ 
+  user      User   @relation("UserSessions", fields: [username], references: [nickname])
+  
+
+  @@map("sessions")
+}
+
+model Invitation {
+  id             Int     @id @default(autoincrement())
+  username       String?
+  from           String?
+  from_userId    String?
+  to             String?
+  to_userId      String?
+  for_game       String?
+  to_be_friends  String?
+
+  inv_sent       User[]   @relation("I_send")
+  inv_received   User[]  @relation("I receive")
+}
+
+model Chat{
+  id        Int    @id @default(autoincrement())
+  type      String
+  protected String?
+  chat_name String @unique
+  maxUsers  Int?
+  owner_group_chat  String? 
+
+  admins      Session[]    @relation("admin")
+  users       Session[]    @relation("joined")
+  banned      Session[]    @relation("banned")
+  muted       Session[]    @relation("muted")
+
+  message   Message[] @relation("MessageChat")
+}
+
+model Message {
+  id        Int    @id @default(autoincrement())
+  name_chat String
+  from_id   String
+  to_id     String
+  to        String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  my_chat Chat @relation("MessageChat", fields:[name_chat], references:[chat_name])
+ 
+  from String
+  author     Session  @relation("author", fields: [from], references: [username])
+ 
+  @@map("messages")
+}

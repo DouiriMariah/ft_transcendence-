@@ -1,0 +1,756 @@
+.tab {
+  float: left;
+  width: 100%;
+  height: 40%;
+  overflow-y: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tabi {
+  float: left;
+  width: 100%;
+}
+
+.tabi button {
+  display: flex;
+  color: wheat;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+  height: 50px;
+  font-size:17px;
+}
+
+/* Change background color of buttons on hover */
+.tabi button:hover {
+  background-color: #888769;
+  color: #a8a6a6;
+}
+
+/* .tabi span:hover {
+  background-color: #888769;
+  color: #a8a6a6;
+} */
+
+/* Create an active/current "tabi button" class */
+.tabi button.active {
+  background-color: #4a4d53;
+  color: #ccc;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  display: flex;
+  color: #3b3b41;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+  height: 50px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #404247;
+  color: #a8a6a6;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #4a4d53;
+  color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #e90909;
+  width: 70%;
+  border-left: none;
+  height: 100vh;
+  background-color: #404247;
+  overflow-y: auto;
+}
+
+.avatar-container {
+  background-color: inherit;
+  position: relative;
+  float: left;
+}
+
+.mini {
+  position: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.mini p {
+  color: white;
+  font-size: 15px;
+  font-weight: 550;
+  display: inline-block;
+  margin-left: 10px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  ;
+}
+
+.avatar-container img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.username {
+  font-family: Arial, sans-serif;
+  background-color: inherit;
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 550;
+  color: white;
+  text-align: left;
+}
+
+.status {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid;
+}
+
+.online {
+  background-color: green;
+}
+
+.offline {
+  background-color: rgb(202, 21, 21);
+}
+
+.ingame {
+  background-color: violet;
+}
+
+.newconv {
+  display: flex;
+  margin-top: 2%;
+  /* min-width : 250px; */
+}
+
+.notselected {
+  margin-top: 40vh;
+  margin-left: 55%;
+}
+
+.nochatconv {
+  margin-top: 40vh;
+  margin-left: 20%;
+}
+
+.message__recipient {
+  background-color: #f5ccc2;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+.message__sender {
+  background-color: rgb(194, 243, 194);
+  min-width: 15px;
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: auto;
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+.message__chats>p {
+  font-size: 13px;
+  background-color: #fff;
+  
+}
+
+.sender__name {
+  text-align: right;
+  background-color: #3b3b41;
+  font-size: 15px;
+  color:rgb(160, 238, 184)
+}
+
+.receiver__name {
+  text-align: left;
+  background-color: #3b3b41;
+  font-size: 15px;
+  color:rgb(253, 231, 243)
+
+}
+
+.message__status {
+  position: fixed;
+  bottom: 50px;
+  font-size: 13px;
+  font-style: italic;
+  background-color: #F9F5EB;
+}
+
+.chat__footer {
+  justify-content: center;
+  /* left: 20%;
+  padding: 10px; */
+  flex : 1;
+  background-color: #F9F5EB;
+  height: 10vh;
+}
+
+.form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sendBtn {
+  max-width: 150px;
+  min-width: 20px;
+  background-color: rgb(40, 83, 40);
+  margin-right: 40px;
+  flex-wrap: wrap;
+  display: inline;
+  cursor: pointer;
+}
+
+
+.containo {
+  /* flex: 1; */
+  display: flex;
+  max-height : 100px;
+}
+
+.small-div {
+  /* width: 20%; */
+  width:210px !important;
+  /* flex-basis: 20%; */
+  height: 100px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.small-divi {
+  position:relative;
+  height: 100px;
+  box-sizing: border-box;
+  width: 200px;
+  right : 0 !important;
+  
+}
+
+.small-div-r {
+  position: inherit;
+  /* display: grid; */
+  /* width: 100%; */
+  flex:1;
+  /* flex-basis: 60%; */
+  height: 100px;
+  border-bottom: 0px;
+  background-color: #3b3b41;
+  overflow-y: auto !important;
+  color:#ffffff;
+  font-size:30px;
+}
+
+.new_who p {
+  font-family: Arial, sans-serif;
+  color: white;
+  font-size: 15px;
+  font-weight: 550;
+  display: inline-block;
+  margin-left: 10px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #7a8e8f;
+}
+
+.small-div-r p {
+  color: white;
+  font-size: 15px;
+  font-weight: 550;
+  display: inline-block;
+  margin-left: 10px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.last-divs-container {
+  flex: 1;
+  display: flex;
+}
+
+.last-div {
+  /* width : 250px; */
+  /* flex-basis: 20%; */
+  min-height: 100px;
+  box-sizing: border-box;
+  padding: 20px;
+  /* overflow-y: auto; */
+  width:210px !important;
+  /* overflow-y: auto; */
+}
+
+.small-div {
+  width:210px;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.last-divi {
+  /* overflow-y: auto; */
+  position: relative;
+  box-sizing: border-box;
+  width: 200px;
+  right :0;
+  padding:20px;
+}
+
+.last-div-r {
+  flex:1;
+  width: 100%;
+  min-height: 100px;
+  background-color: #3b3b41;
+  box-sizing: border-box;
+  position: relative;
+  overflow-y: auto;
+}
+
+
+.div-r-sup {
+  overflow-y: auto;
+  background-color: #3b3b41;
+  max-height: 700px;
+}
+
+
+.chat_pres {
+  background-color: bisque;
+  min-height: 30px;
+  padding: 0px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  font-family: "Montserrat", bold;
+}
+
+.chat_bar {
+  width: 60%;
+  margin-left: 5px;
+  white-space: nowrap;
+  bottom: 0;
+}
+
+.chat_bar button {
+  float: right;
+  margin-top: 5px;
+  margin-right: 30px;
+  max-width: 70px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0 rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  outline: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.chat_bari {
+  padding: 10px;
+}
+
+.chat_bari button{
+  background-color: wheat;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0 rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  border-radius: 5px;
+
+}
+
+.foot {
+  font-size: 18px;
+  min-width: 80%;
+  height: 50px;
+  background-color: #BFBEA3;
+}
+
+.search__bar {
+  background-color: #ccc;
+}
+
+.mini_profile {
+  float: left;
+  flex-direction: column;
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.buttons-container {
+  margin-top: auto;
+  position: absolute;
+  padding: 10px;
+  bottom: 0;
+}
+
+.buttons-container button {
+  color: white;
+  outline: none;
+  cursor: pointer;
+  margin: 5px;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.nested-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: #3b3b41;
+  bottom: 0 !important;
+  position: absolute;
+  width: 100%;
+}
+
+.nested-button {
+  width: 80px; /* Fixed width for the button */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0 rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  outline: none;
+  text-align: center;
+}
+
+.custom_btn {
+  float: right;
+  left : 20%;
+  /* margin-top: 5px; */
+  min-width: 100px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  /* padding: 10px 25px; */
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0 rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  outline: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.msg_pv {
+  color: rgb(231, 87, 87);
+  width: 90%;
+  text-align: center;
+  font-size: 25px;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  transform: translateY(30%);
+  /* overflow-y: auto; */
+}
+
+.invit {
+  color: rgb(231, 87, 87);
+  width: 90%;
+  height: 80px;
+  text-align: center;
+  font-size: 25px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  /* transform: translateY(30%); */
+  overflow-y: auto !important;
+}
+
+.invit button {
+  background-color: rgb(168, 92, 20);
+  color : white;
+  width : 32px;
+  height : 22px;
+  margin-left: 4px;
+  position: relative;
+  right : 0;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0 rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  border-radius: 5px;
+}
+
+.msg_pv button {
+  background-color: rgb(168, 92, 20);
+  color : white;
+  width : 40px;
+  height : 30px;
+  margin-left: 4px;
+  position: relative;
+  right : 0;
+}
+
+.newpassbutton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height : 27px;
+  width: 55px;
+  background-color: wheat;
+  padding: 5px;
+  margin-top:5px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0 rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  border-radius: 5px;
+}
+
+.invit p {
+font-size: 15px;
+color :orange;
+margin-bottom: 0;
+}
+
+.new_convi {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  min-height: 30px;
+  padding: 10px;
+  font-family: "Montserrat", serif;
+
+}
+
+.new_who {
+  flex-basis: 60%;
+  padding: 15px;
+  background-color: #7a8e8f;
+  /* font-family: "Montserrat", serif; */
+  font-family: Arial, sans-serif;
+
+}
+
+
+.bodo {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.search__bar {
+  background-color: #ccc;
+}
+
+.conv_btn {
+  background-color: #5e0f0a !important;
+  color: white;
+}
+
+.custom_btn {
+  margin-top: 5px;
+  width: 100px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0 rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  outline: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+.leave {
+  height: 30px;
+  width: 100px;
+  align-content: end;
+  float: inline-end;
+  background-color: #660303;
+}
+
+.scroll {
+  overflow-y: auto;
+}
+
+.toggle-button {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 5px;
+  background-color: inherit;
+}
+
+/* Style for the checkbox input (hidden) */
+.toggle-button input {
+  display: none;
+}
+
+/* Style for the sliding part of the button */
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+/* Style for the sliding part when the button is toggled on */
+.toggle-button input:checked+.slider {
+  background-color: #2196F3;
+}
+
+/* Style for the circular "knob" of the button */
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: white;
+  top: 4px;
+  left: 4px;
+  transition: 0.4s;
+}
+
+/* Style for the circular "knob" when the button is toggled on */
+.toggle-button input:checked+.slider::before {
+  transform: translateX(26px);
+}
+
+.create_chat {
+  display: inline-flex;
+  background-color: inherit;
+  align-items: center;
+  justify-content: center;
+}
+
+.create_chat button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding : 10px;
+}
+
+.input_chat {
+  border: none;
+  background-color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+  max-width: 150px;
+  /* font-size: small; */
+}
+
+.input_chat::placeholder {
+  font-size: 10px;
+}
+
+.create_button {
+
+  display: flex;
+  height: 10px;
+  width: 3px;
+  background-color: inherit;
+  color: white;
+  padding: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.create_button:hover {
+  transition: .8s;
+  background-color: #6c6c6c;
+}
+
+.protectedBool {
+  font-size: 10px;
+  color:rgb(134, 196, 255);
+}
+.privBool {
+  font-size: 10px;
+  color:rgb(247, 189, 255)
+}
+
+.private_message {
+  font-size:30px;
+  color:rgb(252, 76, 76);
+  background-color: #3b3b41;
+}

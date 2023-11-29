@@ -1,0 +1,136 @@
+.box {
+  gap: 15px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.first-box {
+  position: relative;
+  transform: translateY(200px);
+  width: 500px;
+  background: rgb(252, 252, 158);
+  padding: 10px 10px;
+  min-height: 100px;
+}
+
+.first-box content {
+  justify-content: center;
+  align-items: center;
+  background: rgb(252, 252, 158);
+}
+
+.first-box img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.name {
+  font-weight: bold;
+  position: relative;
+  background: rgb(252, 252, 158);
+  margin: 5px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 10px;
+  text-align: center;
+}
+
+.first-box p2 {
+  font-weight: bold;
+  font-size: smaller;
+  background: rgb(252, 252, 158);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 10px;
+  text-align: center;
+  float: left;
+}
+
+.first-box p {
+  font-weight: bold;
+  text-transform: uppercase;
+  background: rgb(252, 252, 158);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 10px;
+  text-align: center;
+}
+
+.first-box p3 {
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: rgb(252, 252, 158);
+
+}
+
+.first-box button {
+  float: right;
+  color: white;
+  height: 30px;
+  background-color: rgb(122, 122, 10);
+}
+
+.clickable-text {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: smaller;
+  background: rgb(252, 252, 158);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 10px;
+  text-align: center;
+  float: left;
+
+}
+
+.info {
+  height: 50px;
+  background: rgb(252, 252, 158);
+  width: 100%;
+}
+
+.showFriends,
+.sumupWins {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.showFriends {
+  background: rgb(252, 252, 158);
+  float: left;
+}
+
+.sumupWins {
+  background: rgb(252, 252, 158);
+  float: right;
+}
+
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-container img {
+  flex: 1;
+  max-width: 100%;
+  height: auto;
+  transition: filter 0.3s;
+}
+
+.image-container img.locked {
+  filter: grayscale(100%);
+}
